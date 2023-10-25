@@ -1,0 +1,9 @@
+body {margin: 0}
+
+h1 {color:green}
+
+p {color:blue; font-weight: bold;}
+
+nav {color:#ff6347; font-size:40; padding:30; text-align: right}
+
+img {max-width:100%}
