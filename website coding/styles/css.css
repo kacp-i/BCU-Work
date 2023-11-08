@@ -1,30 +1,91 @@
 .logo {
 	height:100px;
 	padding-left:20;
+	padding-top:20;
+	padding-bottom:10;
+	float:left;
+	max-width:15%;
 }
 
 .permNavigation {
-	padding-left:5rem; display:inline-block; padding-top:100px;
+	min-width:1440px;
+	padding-left:15rem;
+	display:inline-block;
+	padding-top:2.5%;
+	text-align:left;
+	float:right;
+	max-width:50;
+	border: 0px solid green;
 }
-
 .permHeader {
-	position:fixed; display:flex; border-bottom:4px solid red;
+	position:fixed;
+	border-bottom:4px solid #000000;
+	background-color:#F5F5F5;
+	width:100%;
+	z-index:10;
+}
+.banner{
+	position:static;
+	text-align:left;
+}
+.banner .text{
+	position:absolute;
+	left:20;
+	top:50%;
+	color:#1B1D24;
+	font-size: 64px; 
+	font-family: DM Serif Text;
+}
+.banner img{
+	max-width:100%;
+	padding-bottom:20px;
+	padding-top:120px;
 }
 
-.banner .image{
-	max-width:100%
+.grid .image{
+	float:left;
+	width:50%;
+	background-color:#F5F5F5;
+}
+.grid img{
+	width: calc(100% - (20px * 2));
+	margin: 20px;
+}
+.grid text{
+	width: calc(100% - (20px * 2));
+	margin: 20px;
 }
 
-.gridImg .image{
-	float:left; width:50%
+.footer {
+	background-color:black;
+	max-width:100%;
+	padding-bottom:20px;
+}
+.footer p {
+	color:#00FF00;
+	font-size: max(40px);
+	font-weight: bold;
+	font-family:Inter;
+}
+.footerText {
+	text-align:center;
 }
 
-.gridImg img{
-	width: calc(100% - (20px * 2)); margin: 20px;
+body {
+	margin: 0;
+	background-color:#F5F5F5
 }
 
-body {margin: 0; background-color:#F5F5F5}
 
-p {color:blue; font-weight: bold;}
 
-a {color:black; font-size:33px; font-family:Inter; font-weight:500; text-decoration:underline; word-wrap:break-word; padding-right:100px}
+
+a {
+	color:black;
+	font-size:33px;
+	font-family:Inter;
+	font-weight:500;
+	text-decoration:underline;
+	word-wrap:break-word;
+	padding-right:100px
+}
+
