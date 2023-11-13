@@ -21,25 +21,27 @@
 	position:fixed;
 	border-bottom:4px solid #000000;
 	background-color:#F5F5F5;
-	width:100%;
+	width:120%;
+	max-width:100%;
 	z-index:10;
 }
 .banner{
 	position:static;
 	text-align:left;
+	max-width:100%;
 }
 .banner .text{
 	position:absolute;
 	left:20;
-	top:50%;
+	top:25%;
 	color:#1B1D24;
-	font-size: 64px; 
+	font-size: 50px; 
 	font-family: DM Serif Text;
 }
 .banner img{
 	max-width:100%;
-	padding-bottom:20px;
 	padding-top:120px;
+	border-bottom: 1px solid black;
 }
 
 .grid .image{
@@ -48,12 +50,13 @@
 	background-color:#F5F5F5;
 }
 .grid img{
-	width: calc(100% - (20px * 2));
-	margin: 20px;
+	width: calc(100% - (250px * 2));
+	margin: 250px;
+	margin-top: 40px;
 }
 .grid text{
-	width: calc(100% - (20px * 2));
-	margin: 20px;
+	width: calc(100% - (250px * 2));
+	margin: 250px;
 }
 
 .footer {
@@ -73,11 +76,8 @@
 
 body {
 	margin: 0;
-	background-color:#F5F5F5
+	background-color:#F5F5F5;
 }
-
-
-
 
 a {
 	color:black;
@@ -86,6 +86,20 @@ a {
 	font-weight:500;
 	text-decoration:underline;
 	word-wrap:break-word;
-	padding-right:100px
+	padding-right:100px;
 }
 
+
+::-webkit-scrollbar {
+	width: 0px;
+  }
+  /*
+  ::-webkit-scrollbar-track {
+	background: #f5f5f5; 
+  }
+  ::-webkit-scrollbar-thumb {
+	background: #727272; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+	background: #838383; 
+  }*/
