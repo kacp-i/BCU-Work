@@ -1,35 +1,88 @@
-/*@media only screen and (max-width:599px){
-	
-} decides what happens after screen reaches certain width*/ 
+html{
+	zoom: 90%;
+}
 
-
-.logo {
+.permHeader {
+	display: grid;
+	position: fixed;
+	grid-template-columns: repeat(2,1fr);
+	border-bottom:4px solid #000000;
+	background-color:#F5F5F5;
+	width:120%;
+	height: 130px;
+	max-width:100%;
+	z-index:10;
+	justify-content: center;
+}
+.permHeader .logo {
+	display: flex;
+	position: fixed;
 	height:100px;
 	padding-left:20;
 	padding-top:20;
 	padding-bottom:10;
-	float:left;
-	max-width:15%;
+	z-index: 11;
+}
+.permHeader .permNavigation {
+	display: flex;
+	position: fixed;
+	padding-top: 2.2%;
+	text-align:right;
+	margin:0;
+	justify-self: center;
 }
 
 
-.permNavigation {
-	min-width:1440px;
-	padding-left:15rem;
-	display:inline-block;
-	padding-top:2.5%;
-	text-align:left;
-	float:right;
-	max-width:50;
-	border: 0px solid green;
+.permBurger{
+	display: none;
+	margin-left: 89%;
+	margin-top: 20px;
+	position: fixed;
+	scale: 120%;
+	z-index: 15;
 }
-.permHeader {
-	position:fixed;
-	border-bottom:4px solid #000000;
-	background-color:#F5F5F5;
-	width:120%;
-	max-width:100%;
-	z-index:10;
+input{
+	display: none;
+	position: fixed;
+	cursor: pointer;
+	margin-left: 91%;
+	margin-top: 32px;
+	scale: 350%;
+	z-index: 15;
+	opacity: 0.001;
+}
+.mobileMenu{
+	visibility: hidden;
+	margin-top: 130px;
+	margin-left: 35%;
+	position: fixed;
+	width: 700px;
+	height: 39%;
+	z-index: 15;
+	background-color: #F5F5F5;
+	border: 4px solid black;
+}
+.mobileMenu a{
+	display: block;
+	font-size:40;
+	padding-bottom: 20px;
+	font-family: "YouTube Sans","Roboto",sans-serif;
+	text-decoration:none;
+}
+.mobileMenu btn{
+	display: block;
+	font-size:40;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	font-family: "YouTube Sans","Roboto",sans-serif;
+	text-decoration:none;
+	cursor: pointer;
+}
+#checkBox1:checked + .mobileMenu {
+	visibility: visible;
+}
+#checkBox1:checked + .permBurger {
+	content: url("images/facebook mono.png");
 }
 
 
@@ -49,7 +102,7 @@
 	width:100%;
 	height:40%;
 	padding-top:130px;
-	border-bottom: 1px solid black;
+	border-bottom: 4px solid black;
 }
 .banner .foregroundImg{
 	display:block;
@@ -63,38 +116,44 @@
 }
 
 
-.grid .image{
-	float:left;
-	width:50%;
-	background-color:#F5F5F5;
+.grid {
+	display: grid;
+	grid-template-columns:repeat(2,1fr);
+	gap: 0 20px;
 }
-.grid .container{
-	margin-top: 20px;
-	border: 1px solid gray;
-	border-radius: 8px;
-	height: 150px;
-	padding: 15px 25px;
-	margin-left:250px;
-	width: calc(100% - (275px * 2));
+.grid .imgContainer{
+	display: flex;
+	background-color:#F5F5F5;
+	margin-top: 100px;
+	margin-bottom: 20px;
+	justify-content: center;
 }
 .grid img{
-	width: calc(100% - (250px * 2));
-	margin-left: 250px;
-	margin-top: 100px;
 	border: 1px solid black;
 	border-radius: 10%;
+	width: 60%;
+}
+.grid .txtContainer{
+	display: flex;
+	border: 1px solid gray;
+	padding: 15px;
+	border-radius: 8px;
+	margin-bottom: 40px;
+	width: 60%;
+	justify-self: center;
 }
 .grid text{
 	font-size: 20px;
-	font-family:Inter;
+	font-family: "YouTube Sans","Roboto",sans-serif;
 }
 
 
 .footer {
-	background-color:black;
+	background-color:#010101;
 	max-width:100%;
-	border-bottom:4px solid green;
 	align-items:center;
+	padding-top: 24px;
+	padding-bottom: 24px;
 }
 .footer .container{
 	display: grid;
@@ -107,31 +166,40 @@
 	display:flex;
 	flex-direction:column;
 }
-.footer .copyright .header {
+.footer .header {
 	color:white;
-	padding:10px 25px;
-	font-size: max(25px);
-	font-family:Inter;
-	border: 1px solid red;
+	padding-bottom:35px;
+	padding-left: 20px;
+	font-size: max(35px);
+	font-family: "YouTube Sans","Roboto",sans-serif;
 }
 .footer .copyright .text{
 	color:white;
 	padding:10px 25px;
-	font-size: max(15px);
-	font-family:Inter;
-	border: 1px solid red;
+	font-size: max(20px);
+	font-family: "YouTube Sans","Roboto",sans-serif;
 }
 .footer .socials{
 	display:flex;
 	flex-direction:column;
 }
-.footer .socials .header{
-	color:white;
-	padding:10px 25px;
-	font-size: max(25px);
-	font-family:Inter;
-	border: 1px solid red;
+.footer .socials .content{
+	display: grid;
+	padding: 0 20px;
+	grid-template-columns: repeat(4,10%);
 }
+.footer .socials .content a{
+	margin:0;
+	padding:0px;
+	outline:0;
+	width: 0;
+}
+.footer .socials .content img{
+	border-radius: 10%;
+	max-width: 48px;
+	max-height: 48px;
+}
+
 
 body {
 	margin: 0;
@@ -140,12 +208,12 @@ body {
 
 
 a {
-	font-size:33px;
-	font-family:Inter;
+	font-size:33;
+	font-family: "YouTube Sans","Roboto",sans-serif;
 	font-weight:500;
 	text-decoration:none;
 	word-wrap:break-word;
-	padding-right:100px;
+	padding: 0 50px;
 }
 /*default state hyperlink*/
 a:link{
@@ -165,9 +233,11 @@ a:active{
 	color:black;
 }
 
+
+/*scroll bar changes*/
 ::-webkit-scrollbar {
 	width: 0px;
-  }
+}
   /*
   ::-webkit-scrollbar-track {
 	background: #f5f5f5; 
@@ -178,3 +248,89 @@ a:active{
   ::-webkit-scrollbar-thumb:hover {
 	background: #838383; 
   }*/
+
+/* inbetween mobile and desktop view */
+@media only screen and (max-width: 1870px) and (min-width: 720px) {
+	.permHeader{
+		height: 220px;
+	}
+	.permHeader .logo{
+		justify-self: center;
+	}
+	.permHeader .permNavigation{
+		padding-top: 170px;
+	}
+	.permHeader .permNavigation a{
+		border-left: 1px solid black;
+		text-align: center;
+		font-size: 20;
+	}
+
+	.banner .text{
+		top: 35%;
+	}
+	.banner img{
+		padding-top: 220px;
+	}
+	.banner .foregroundImg{
+		visibility: hidden;
+	}
+
+	#checkBox1:checked + .mobileMenu {
+		visibility: hidden;
+	}
+}
+/* mobile  view */
+@media only screen and (max-width: 720px) {
+	.permHeader{
+		height: 130px;
+	}
+	.permHeader .permNavigation{
+		display: none;
+	}
+
+	.banner img{
+		padding-top: 130px;
+	}
+	.banner .text{
+		top:27%;
+	}
+	.banner .foregroundImg{
+		visibility: hidden;
+	}
+
+	.permBurger{
+		display: initial;
+	}
+
+	input{
+		display: initial;
+	}
+
+	.grid{
+		grid-template-columns:repeat(1,1fr);
+	}
+
+	#dText01{
+		display: none;
+	}
+
+	.footer .socials .content{
+		grid-template-columns: repeat(1,1fr);
+		gap: 30px 0;
+	}
+
+	#logoLink{
+		justify-self: center;
+		padding-left: 60%;
+	}
+}
+/* extras for desktop view */
+@media only screen and (min-width: 720px) {
+	#mText01{
+		display: none;
+	}
+	#checkBox1:checked + .mobileMenu {
+		visibility: hidden;
+	}
+}
