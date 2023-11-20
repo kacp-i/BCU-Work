@@ -3,7 +3,7 @@
 #✓ Register/view/update/delete doctor
 #✓ View patient
 # Can assign doctor to a patient
-docList = [["Dr. Ami",9102],["Dr. Emi",2115]]
+import csv
 patientList = [["Hamood Hamood"],["Jamie Jame"]]
 
 
@@ -48,74 +48,88 @@ Select one of the X options below\n
 def A_registerDoctor():
     docName = input("\nType doctor name:\n")
     docID = input("\nType doctor ID:\n")
+    newDoc = [docName, docID]
     
-    docList.append([docName, docID])
-    print("\n"+docName, "-", docID, "has been added to list of doctors")
-    print("Returning to menu")
+    with open('doctorList.csv','a',newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(newDoc)
+        
+        f.close()
     A_menu()
 
-def A_viewDocList(goMenu=""):
-    count = 1
-    print("Displaying current Doctors in the system\n")
+def A_viewDocList(operation=""):
+    listD = []
     
-    for elem in docList:
-        #print(len(elem[0])) use for format string
-        print("{:<3} {:<15} {}".format(count, elem[0], elem[1]))
-        count += 1
+    with open('doctorList.csv', newline='') as f:
+        csvReader = csv.reader(f)
         
-    if goMenu == "menu":
+        for row in csvReader:
+            listD.append(row)
+            print(row)
+            
+        f.close()
+        
+    if operation == "menu":
         A_menu()
+    elif operation == "list":
+        return listD
     else:
         pass
 
 def A_updateDocList():
-    print("""
-Select one of the 3 options below
-1 - Change Doctor Name
-2 - Change Doctor ID
-3 - Quit""")
-
-    userChoice = input()
+    count = -1
     
-    if userChoice == "1":
-        A_viewDocList()
+    docList = A_viewDocList("list")
+    
+    searchID = input("Type the ID of the doctor:\n")
+    
+    for elem in docList:
+        count += 1
         
-        docIndex = int(input("\nType the index of the doctor you would like to change:\n"))
-        newDocName = input("\nType the new name of the doctor:\n")
+        if elem[1] == searchID:
+            print("has been found at row",count)
+            break
+    
+    docList.pop(count)
+    
+    newDocName = input("What is the doctor's new name?\n")
+    
+    newDocElem = [newDocName,searchID]
+    docList.append(newDocElem)
+    
+    with open('doctorList.csv','w',newline='') as f:
+        writer = csv.writer(f)
         
-        print("You are changing",docList[docIndex-1][0],"to",newDocName,"\nAre you sure? (Y/N)\n")
-        userChoice = input()
+        for newRow in docList:
+            writer.writerow(newRow)
         
-        if userChoice.upper() == "Y":
-            docList[docIndex-1][0] = newDocName
-            print("Update confirmed")
-            A_menu()
-        else:
-            print("Doctor info update cancelled, returning to menu")
-            A_menu()
-            
-    elif userChoice == "2":
-        A_viewDocList()
-    elif userChoice == "3":
-        A_menu()
-    else:
-        pass
+        f.close()
+    A_menu()
 
 def A_deleteDoc():
-    A_viewDocList()
+    count = -1
     
-    docIndex = int(input("\nType the index of the doctor you would like to remove:\n"))
+    docList = A_viewDocList("list")
     
-    print("You are about to remove",docList[docIndex-1],"from the system, are you sure? (Y/N)")
-    userChoice = input()
+    searchID = input("Type the ID of the doctor:\n")
     
-    if userChoice.upper() == "Y":
-        print("You have sucessfully deleted",docList[docIndex-1][0])
-        docList.pop(docIndex-1)
-        A_menu()
-    else:
-        print("Doctor deletion cancelled, returning to menu")
-        A_menu()
+    for elem in docList:
+        count += 1
+        
+        if elem[1] == searchID:
+            print("has been found at row",count)
+            break
+    
+    docList.pop(count)
+    
+    with open('doctorList.csv','w',newline='') as f:
+        writer = csv.writer(f)
+        
+        for newRow in docList:
+            writer.writerow(newRow)
+        
+        f.close()  
+    A_menu()
 
 def A_viewPatientList():
     count = 1
