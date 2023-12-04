@@ -1,8 +1,13 @@
 # Admin
-#✓ Admin Login
-#✓ Register/view/update/delete doctor
-#✓ View patient
+############################ DONE ############################
+# Admin Login
+# Register/view/update/delete doctor
+# View patient
 # Can assign doctor to a patient
+
+############################ TO DO ############################
+
+
 import csv
 patientList = [["Hamood Hamood"],["Jamie Jame"]]
 
@@ -27,7 +32,8 @@ Select one of the X options below\n
 2 - View Doctor List
 3 - Update Doctor
 4 - Delete Doctor
-5 - View Patient List\n""")
+5 - View Patient List
+6 - Assign Patients to doctor\n""")
           
     userChoice = input()
     print()
@@ -42,6 +48,8 @@ Select one of the X options below\n
         A_deleteDoc()
     elif userChoice == "5":
         A_viewPatientList()
+    elif userChoice == "6":
+        A_assignDocToPatient()
     else:
         pass
 
@@ -143,7 +151,27 @@ def A_viewPatientList():
     A_menu()
     
 def A_assignDocToPatient():
-    #do some CSV stuff
-    pass
+    assigningPatients = True
+    columnNames = ("Doctor Name","Patient Name")
+    patientAssignList = []
+    
+    docName = input("Enter doctor name:\n")
+    while(assigningPatients):
+        patientName = input("\nEnter patient name:\n")
+        patientAssignList.append(patientName)
+        choice = input("Would you like to assign another patient?\t(Y/N)\n")
+        if choice == "N":
+            assigningPatients = False
+        else:
+            pass
+        
+    newLink = [docName,patientAssignList]
+    with open('doctorLinks.csv','w',newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(columnNames)
+        writer.writerow(newLink)
+                
+        f.close()  
+    A_menu()
 
 A_menu()
