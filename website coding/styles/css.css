@@ -1,6 +1,9 @@
 html{
 	zoom: 90%;
 }
+body{
+	max-width: 100%;
+}
 
 .permHeader {
 	display: grid;
@@ -117,9 +120,14 @@ input{
 
 
 .grid {
+	max-width: 100%;
 	display: grid;
 	grid-template-columns:repeat(2,1fr);
 	gap: 0 20px;
+}
+.grid .headerContainer{
+	text-align: center;
+	margin-top: 70px;
 }
 .grid .imgContainer{
 	display: flex;
@@ -127,11 +135,6 @@ input{
 	margin-top: 100px;
 	margin-bottom: 20px;
 	justify-content: center;
-}
-.grid img{
-	border: 1px solid black;
-	border-radius: 10%;
-	width: 60%;
 }
 .grid .txtContainer{
 	display: flex;
@@ -146,7 +149,17 @@ input{
 	font-size: 20px;
 	font-family: "YouTube Sans","Roboto",sans-serif;
 }
-
+#roundedImg1{
+	border: 1px solid black;
+	border-radius: 10%;
+	width: 60%;
+}
+#headerImg1{
+	border: 1px solid black;
+	margin-top: -70px;
+	width: 90%;
+	height: 100%;
+}
 
 .footer {
 	background-color:#0e1111;
@@ -204,6 +217,18 @@ input{
 body {
 	margin: 0;
 	background-color:#F5F5F5;
+}
+
+.styledParagraph {
+	padding: 0 200px;
+}
+
+p {
+	font-size:25;
+	font-family: "YouTube Sans","Roboto",sans-serif;
+	/*white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;*/
 }
 
 
