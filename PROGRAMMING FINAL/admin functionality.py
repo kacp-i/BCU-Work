@@ -6,7 +6,11 @@
 # Can assign doctor to a patient
 
 ############################ TO DO ############################
-
+# Remove a patient from the system after treatment is done
+# View discharged patient list
+# Update own details
+# Print all doctor details
+# Print all patient details
 
 import csv
 patientList = [["Hamood Hamood"],["Jamie Jame"]]
@@ -50,6 +54,8 @@ Select one of the X options below\n
         A_viewPatientList()
     elif userChoice == "6":
         A_assignDocToPatient()
+    elif userChoice == "7":
+        A_dischargePatients()
     else:
         pass
 
@@ -173,5 +179,23 @@ def A_assignDocToPatient():
                 
         f.close()  
     A_menu()
+    
+def A_dischargePatients():
+    patientName = ['Patient Name']
+    count = 1
+    
+    with open('patientList.csv', newline='') as f:
+        csvReader = csv.reader(f)
+        
+        for row in csvReader:
+            if row[3] == "Treatment Complete":
+                patientName.append(row[0])
+            count += 1
+        f.close()
+    
+    with open('dischargeList.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(patientName)
+        f.close()
 
 A_menu()
