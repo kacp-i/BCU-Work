@@ -160,6 +160,28 @@ input{
 	width: 90%;
 	height: 100%;
 }
+#singleHeader{
+	text-align: center;
+}
+#singleImage{
+	align-self: center;
+	margin-bottom: 40px;
+	border-radius: 20px;
+	width: 75%;
+}
+#sideImage1{
+	width: 80%;
+	margin-left: 55px;
+}
+#referenceImage1{
+	width: 60%;
+	margin-top: -40px;
+	margin-bottom: 40px;
+}
+#referenceText1{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
 
 .footer {
 	background-color:#0e1111;
@@ -256,6 +278,15 @@ a:hover{
 /*when pressed hyperlink state*/
 a:active{
 	color:black;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	font-size:33;
+	font-family: "YouTube Sans","Roboto",sans-serif;
+	text-align: left;
+	border: 1px solid green;
 }
 
 
