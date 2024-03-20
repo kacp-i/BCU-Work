@@ -1,0 +1,22 @@
+Cover Page
+
+Introduction
+  - what is data mining and how is it usefull
+  - differnet types of data mining techniques
+  - talk about used data mining technique
+  - literature review
+  - introduce domain
+
+Main
+  - identify knowledge discovery point
+  - describe dataset
+  - breakdown of code
+  - show process of cleaning data
+  - show results of code
+
+Conclusion
+
+
+HARVARD REFERENCING
+
+MAX 1500 WORDS
