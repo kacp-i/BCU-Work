@@ -1,0 +1,22 @@
+html{
+	zoom: 90%;
+}
+body{
+	max-width: 100%;
+}
+
+.container {
+	border: 1px solid red;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 500px;
+	width: 300px;
+	position: relative;
+}
+.remote {
+	border: 2px solid purple;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+}
