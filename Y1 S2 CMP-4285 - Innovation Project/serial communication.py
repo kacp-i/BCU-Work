@@ -1,4 +1,5 @@
 # https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
+# password for PI is 12345
 
 # Code for Arduino Side
 """ 
