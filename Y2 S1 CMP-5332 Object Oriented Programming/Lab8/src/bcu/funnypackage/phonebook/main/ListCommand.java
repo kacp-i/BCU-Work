@@ -1,5 +1,7 @@
 package bcu.funnypackage.phonebook.main;
 
+import java.util.List;
+
 import bcu.funnypackage.phonebook.model.*;
 
 public class ListCommand implements Command {
@@ -11,6 +13,14 @@ public class ListCommand implements Command {
 		
 	@Override
 	public void execute(PhoneBook phonebook) throws NotPresentException{
-		phonebook.getAllNames();
+		List<String> names = phonebook.getAllNames();
+		if (names.isEmpty()) {
+			System.out.println("No entries.");
+		} 
+		else {
+			for (String name : names) {
+				System.out.println(name);
+			}
+		}
 	}
 }

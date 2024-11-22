@@ -58,49 +58,36 @@ public class Main {
 		String firstPart = parts[0];
 
 		if ("add".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 3) {
-				throw new InvalidCommandException();
-			}
-			phoneBook.addEntry(parts[1], parts[2]);
-			System.out.println("Entry added.");
-		} else if ("show".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 2) {
-				throw new InvalidCommandException();
-			}
-			PhoneBookEntry entry = phoneBook.getEntry(parts[1]);
-			System.out.println("Name: " + entry.getName());
-			System.out.println("Phone number: " + entry.getPhoneNumber());
-		} else if ("update".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 3) {
-				throw new InvalidCommandException();
-			}
-			phoneBook.updateEntry(parts[1], parts[2]);
-			System.out.println("Entry updated.");
-		} else if ("remove".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 2) {
-				throw new InvalidCommandException();
-			}
-			phoneBook.removeEntry(parts[1]);
-			System.out.println("Entry removed.");
-		} else if ("list".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 1) {
-				throw new InvalidCommandException();
-			}
-			List<String> names = phoneBook.getAllNames();
-			if (names.isEmpty()) {
-				System.out.println("No entries.");
-			} else {
-				for (String name : names) {
-					System.out.println(name);
-				}
-			}
-		} else if ("help".equalsIgnoreCase(firstPart)) {
-			if (parts.length != 1) {
-				throw new InvalidCommandException();
-			}
-			System.out.println(HELP_MESSAGE);
+			Command addCommand = new AddCommand(parts);
+			return addCommand;
+		} 
+		else if ("show".equalsIgnoreCase(firstPart)) {
+			Command showCommand = new ShowCommand(parts);
+			return showCommand;
+		}
+		else if ("update".equalsIgnoreCase(firstPart)) {
+			Command updateCommand = new UpdateCommand(parts);
+			return updateCommand;
+		}
+		else if ("remove".equalsIgnoreCase(firstPart)) {
+			Command removeCommand = new RemoveCommand(parts);
+			return removeCommand;
+		}
+		else if ("list".equalsIgnoreCase(firstPart)) {
+			Command listCommand = new ListCommand(parts);
+			return listCommand;
+		}
+		else if ("help".equalsIgnoreCase(firstPart)) {
+			Command helpCommand = new HelpCommand(parts);
+			return helpCommand;
 		} else {
 			throw new InvalidCommandException();
 		}
+	}
+
+	public void parseAndExecute(String command) throws InvalidCommandException, AlreadyPresentException, NotPresentException{
+		
+		Command cmd = parse(command);
+		cmd.execute(this.phoneBook);
 	}
 }
