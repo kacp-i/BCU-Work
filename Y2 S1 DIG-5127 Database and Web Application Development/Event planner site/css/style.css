@@ -37,10 +37,33 @@ nav a.active {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 3em;
 }
-.banner .textColumn{
+.banner .textColumn {
     padding: 50px;
+}
+.textColumn h1 {
+    font-size: 60px;
+}
+.textColumn p {
+    padding-top: 10px;
+    width: 70%;
+    font-size: 22px;
+}
+.textColumn button {
+    margin-top: 50px;
+    color: white;
+    background-color: black;
+    height: 4em;
+    width: 180px;
+    border-radius: 50px;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+}
+.banner img{
+    display: block;
+    margin: auto;
+    margin-top: 7%;
+    border-radius: 20px;
 }
 
 marquee {
@@ -60,10 +83,27 @@ marquee a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 3em;
+    align-items: center;
 }
 .content1 .column {
-    border: 1px solid red;
     text-align: center;
+}
+.content1 .separator {
+    width: 80%;
+    border-top: 2px solid gray;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+}
+.separator p {
+    text-align: center;
+    font-size: 18px;
+}
+.content1 .column img {
+    width: 60%;
+    height: 350px;
+    border: 20px solid lightgray;
+    border-radius: 30px;
 }
 
 .content2 {
@@ -142,15 +182,72 @@ marquee a {
 footer {
     max-width: 100%;
     background-color: #D9D9D9;
-    border: 2px solid black;
-    padding: 20px;
+    border-top: 2px solid black;
+    padding: 30px;
+    padding-bottom: 10px;
 }
-footer h1 {
+footer * {
     background-color: inherit;
-    font-size: 32px;
 }
-footer p {
-    background-color: inherit;
+footer ul{
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    overflow: hidden;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+footer .footerContent {
+    max-width: 100%;
+    display: flex;
+}
+.footerContent .split30 {
+    width: 25%;
+}
+.split30 h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.split30 p {
+    font-size: 20px;
+}
+.footerContent .split70 {
+    width: 75%;
+}
+.split70 ul {
+    padding-top: 6px;
+}
+.split70 li {
+    float: right;
+    padding-right: 9rem;
+}
+footer .splitter {
+    max-width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+.splitter .copyright {
+    width: 50%;
+}
+.copyright p {
+    font-size: 18px;
+}
+.splitter .payments {
+    width: 50%;
+    float: right;
+}
+.payments li {
+    float: right;
+    padding: 10px;
+}
+.payments li img {
+    max-width: 60px;
+    max-height: 38px;
 }
 
 
