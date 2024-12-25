@@ -1,7 +1,13 @@
+/* GENERAL STYLING ACROSS ALL PAGES */
+
+:root {
+    --backgroundColour: #FAF1F1;
+}
+
 * {
     padding: 0;
     margin: 0;
-    background-color: #FAF1F1;
+    background-color: var(--backgroundColour);
     font-family: "Inter", sans-serif;
 }
 
@@ -32,6 +38,79 @@ nav a.active {
     background-color: #04AA6D;
     color: white;
 }
+
+footer {
+    max-width: 100%;
+    background-color: #D9D9D9;
+    border-top: 2px solid black;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+footer * {
+    background-color: inherit;
+}
+footer ul{
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    overflow: hidden;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+footer .footerContent {
+    max-width: 100%;
+    display: flex;
+}
+.footerContent .split30 {
+    width: 25%;
+}
+.split30 h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.split30 p {
+    font-size: 20px;
+}
+.footerContent .split70 {
+    width: 75%;
+}
+.split70 ul {
+    padding-top: 6px;
+}
+.split70 li {
+    float: right;
+    padding-right: 9rem;
+}
+footer .splitter {
+    max-width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+.splitter .copyright {
+    width: 50%;
+}
+.copyright p {
+    font-size: 18px;
+}
+.splitter .payments {
+    width: 50%;
+    float: right;
+}
+.payments li {
+    float: right;
+    padding: 10px;
+}
+.payments li img {
+    max-width: 60px;
+    max-height: 38px;
+}
+
+/* INDEX PAGE STYLE */
 
 .banner {
     width: 100%;
@@ -179,79 +258,70 @@ marquee a {
     margin-bottom: 4em;
 }
 
-footer {
-    max-width: 100%;
-    background-color: #D9D9D9;
-    border-top: 2px solid black;
-    padding: 30px;
-    padding-bottom: 10px;
-}
-footer * {
-    background-color: inherit;
-}
-footer ul{
-    align-items: center;
-    padding-left: 1rem;
-    list-style-type: none;
-    overflow: hidden;
-}
-footer a {
-    text-decoration: none;
-    color: black;
-    font-size: 22px;
-}
-footer .footerContent {
-    max-width: 100%;
-    display: flex;
-}
-.footerContent .split30 {
-    width: 25%;
-}
-.split30 h1 {
-    font-size: 40px;
-    padding-bottom: 20px;
-}
-.split30 p {
-    font-size: 20px;
-}
-.footerContent .split70 {
-    width: 75%;
-}
-.split70 ul {
-    padding-top: 6px;
-}
-.split70 li {
-    float: right;
-    padding-right: 9rem;
-}
-footer .splitter {
-    max-width: 100%;
-    margin-top: 30px;
-    border-top: 1px solid black;
-    display: flex;
-    align-items: center;
-}
-.splitter .copyright {
-    width: 50%;
-}
-.copyright p {
-    font-size: 18px;
-}
-.splitter .payments {
-    width: 50%;
-    float: right;
-}
-.payments li {
-    float: right;
-    padding: 10px;
-}
-.payments li img {
-    max-width: 60px;
-    max-height: 38px;
-}
-
-
 .centeredBtn {
     display: flex;
     justify-content: center;
+}
+
+
+/* LOGIN PAGE STYLE */
+
+.login {
+    max-width: 100%;
+}
+.loginBG img{
+    width: 100%;
+    height: 874px;
+}
+
+.loginFormContainer {
+    position: absolute;
+    height: 600px;
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: var(--backgroundColour);
+    top: 200px;
+    left: 725px;
+    text-align: center;
+}
+.loginFormContainer .formHeader {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+.formHeader h1 {
+    font-size: 50px;
+    text-shadow: rgba(0, 0, 0, 0.3) 1px 0 10px;
+}
+#uName {
+    margin-bottom: 40px;
+}
+.loginFormContainer input[type = text], .loginFormContainer input[type = password] {
+    border: none;
+    border-bottom: 2px solid black;
+    border-color: black;
+    background-color: #FDFDFD;
+    font-size: 18px;
+    width: 65%;
+    padding: 10px;
+}
+.loginFormContainer input::placeholder {
+    font-style: italic;
+}
+.loginFormContainer a, .loginFormContainer p {
+    font-size: 20px;
+}
+.forgotPass {
+    margin-top: 20px;
+}
+.loginFormContainer input[type = submit] {
+    background-color: #CC7F7F;
+    color: white;
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 24px;
+    margin-top: 80px;
+    margin-bottom: 40px;
 }
