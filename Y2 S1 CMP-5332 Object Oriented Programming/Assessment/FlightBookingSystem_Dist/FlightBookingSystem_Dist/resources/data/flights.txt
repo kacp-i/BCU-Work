@@ -1,0 +1,4 @@
+1::LH2560::Birmingham::Munich::2022-11-25::40::120::false::[]::
+2::BL1000::Munich::Manchester::2022-12-02::44::87::false::[]::
+3::32::testland::testerland::2099-11-21::50::100::false::[]::
+4::33::passland::passedland::2100-11-21::45::1000::false::[]::
