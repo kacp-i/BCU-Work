@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    flex: 1;
+}
+
+nav {
+    height: 4em;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid black;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo a {
+    font-weight: 900;
+    text-decoration: none;
+    color: black;
+}
+
+.pageNav {
+    display: flex;
+}
+
+.pageNav a {
+    text-align: center;
+    padding: 21px 30px;
+    font-size: 17px;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+nav .pageNav a[href="reviews.html"] {
+    font-weight: bold;
+}
+
+.profile {
+    margin-left: auto;
+    background: transparent;
+}
+
+.profile-img {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #FAF1F1;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background: transparent;
+}
+
+.left-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background: transparent;
+    font-weight: 900;
+}
+
+.top-reviews {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.review-stars {
+    color: #f39c12;
+    font-size: 18px;
+}
+
+.review-author {
+    color: #333;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.review-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.rating-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked ~ label,
+label:hover,
+label:hover ~ label {
+    color: #f39c12;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ddd;
+    color: black;
+}
+
+/*FOOTER*/
+footer {
+    max-width: 100%;
+    background-color: #D9D9D9;
+    border-top: 2px solid black;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+footer * {
+    background-color: inherit;
+}
+footer ul{
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    overflow: hidden;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+footer .footerContent {
+    max-width: 100%;
+    display: flex;
+}
+.footerContent .split30 {
+    width: 25%;
+}
+.split30 h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.split30 p {
+    font-size: 20px;
+}
+.footerContent .split70 {
+    width: 75%;
+}
+.split70 ul {
+    padding-top: 6px;
+}
+.split70 li {
+    float: right;
+    padding-right: 9rem;
+}
+footer .splitter {
+    max-width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+.splitter .copyright {
+    width: 50%;
+}
+.copyright p {
+    font-size: 18px;
+}
+.splitter .payments {
+    width: 50%;
+    float: right;
+}
+.payments li {
+    float: right;
+    padding: 10px;
+}
+.payments li img {
+    max-width: 60px;
+    max-height: 38px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
