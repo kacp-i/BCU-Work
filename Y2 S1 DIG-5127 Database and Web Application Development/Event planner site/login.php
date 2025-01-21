@@ -22,7 +22,7 @@
                 <a href="google.com">Reviews</a>
             </div>
             <div class="profile">
-                <a href="login.html">
+                <a href="login.php">
                     <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
                 </a>
             </div>
@@ -48,7 +48,7 @@
                     
                     <input type="submit" value="Login">
                     
-                    <p>No account? <a href="google.com">Sign Up</a></p>
+                    <p>No account? <a href="signup.php">Sign Up</a></p>
                 </form>
             </div>
         </div>
