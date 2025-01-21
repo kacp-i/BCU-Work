@@ -30,13 +30,33 @@ nav a {
     color: black;
     background-color: white;
 }
-nav a:hover {
+nav .pageNav a:hover {
     background-color: #ddd;
     color: black;
 }
-nav a.active {
-    background-color: #04AA6D;
-    color: white;
+nav .profile {
+    margin-right: auto; 
+    padding: 0; 
+    background: transparent; 
+    float: right;
+}
+.profile a {
+    padding: 0px;
+    padding-top: 13px;
+    padding-right: 13px;
+}
+.profile a:hover {
+    background-color: none;
+}
+.profile .profile-img {
+    width: 40px; 
+    height: 40px; 
+    object-fit: cover; 
+    background: transparent;
+}
+
+.sameLine {
+    display: inline-flex;
 }
 
 footer {
@@ -268,10 +288,11 @@ marquee a {
 
 .login {
     max-width: 100%;
+    
 }
 .loginBG img{
     width: 100%;
-    height: 874px;
+    height: 93.5vh;
 }
 
 .loginFormContainer {
@@ -282,7 +303,7 @@ marquee a {
     border: 2px solid black;
     background-color: var(--backgroundColour);
     top: 200px;
-    left: 725px;
+    left: 40%;
     text-align: center;
 }
 .loginFormContainer .formHeader {
@@ -294,8 +315,8 @@ marquee a {
     font-size: 50px;
     text-shadow: rgba(0, 0, 0, 0.3) 1px 0 10px;
 }
-#uName {
-    margin-bottom: 40px;
+.loginFormContainer input {
+    margin-bottom: 30px;
 }
 .loginFormContainer input[type = text], .loginFormContainer input[type = password] {
     border: none;
@@ -324,4 +345,124 @@ marquee a {
     font-size: 24px;
     margin-top: 80px;
     margin-bottom: 40px;
+}
+
+/* SIGNUP PAGE STYLE */
+
+.signup {
+    max-width: 100%;
+    
+}
+.signupBG img{
+    width: 100%;
+    height: 93.5vh;
+
+}
+.signupFormContainer {
+    position: absolute;
+    height: 800px;
+    width: 600px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: var(--backgroundColour);
+    top: 100px;
+    left: 34%;
+    text-align: center;
+}
+.signupFormContainer .formHeader {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.signupFormContainer input {
+    margin-bottom: 20px;
+}
+.signupFormContainer input[type = text], .signupFormContainer input[type = password], .signupFormContainer input[type = email], .signupFormContainer input[type = tel]{
+    border: none;
+    border-bottom: 2px solid black;
+    border-color: black;
+    background-color: #FDFDFD;
+    font-size: 18px;
+    width: 65%;
+    padding: 10px;
+}
+.signupFormContainer input::placeholder {
+    font-style: italic;
+}
+.signupFormContainer a, .loginFormContainer p {
+    font-size: 20px;
+}
+.signupFormContainer input[type = submit] {
+    background-color: #CC7F7F;
+    color: white;
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+.signupFormContainer .sameLine {
+    gap: 20px;
+}
+
+.accType {
+    display: inline-flex;
+    width: 95%;
+    margin-bottom: 20px;
+}
+#optionOne {
+}
+#optionTwo {
+}
+.accType .switch {
+    position: relative;
+    width: 580px;
+    height: 34px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.accType .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.accType .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(4, 185, 4);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.accType .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.accType input:checked + .slider {
+    background-color: #2196F3;
+}
+.accType input:focus + .slider {
+    box-shadow: 0 0 2px black;
+}
+.accType input:checked + .slider:before {
+    -webkit-transform: translateX(362px);
+    -ms-transform: translateX(362px);
+    transform: translateX(362px);
+}
+.accType .slider.round {
+    border-radius: 34px;
+}
+  
+.accType .slider.round:before {
+    border-radius: 50%;
 }
