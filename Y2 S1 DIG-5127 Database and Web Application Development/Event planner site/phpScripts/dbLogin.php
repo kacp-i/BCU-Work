@@ -51,6 +51,7 @@
                     // create a session variable
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['id'] = $row['id'];
+                    $_SESSION['type'] = 0;
                     
                     header("Location: ../index.php");
                     exit();
