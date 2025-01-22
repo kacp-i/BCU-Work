@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2025 at 12:40 AM
+-- Generation Time: Jan 16, 2025 at 06:10 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `eventplanningsite`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `businesses`
+--
+
+CREATE TABLE `businesses` (
+  `businessID` int(11) NOT NULL,
+  `name` int(11) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `email` int(11) NOT NULL,
+  `type` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -134,6 +148,12 @@ CREATE TABLE `staffdetails` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `businesses`
+--
+ALTER TABLE `businesses`
+  ADD PRIMARY KEY (`businessID`);
 
 --
 -- Indexes for table `customerdetails`
