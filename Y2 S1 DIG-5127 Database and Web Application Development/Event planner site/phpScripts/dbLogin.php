@@ -67,7 +67,7 @@
             else {
                 // trying the business table
                 // creating the sql query
-                $sql = "SELECT * FROM businessdetails WHERE username='$username' AND password='$password'";
+                $sql = "SELECT * FROM businesses WHERE username='$username' AND password='$password'";
 
                 // performing the query and storing the results as a variable
                 $result = mysqli_query($conn, $sql);
