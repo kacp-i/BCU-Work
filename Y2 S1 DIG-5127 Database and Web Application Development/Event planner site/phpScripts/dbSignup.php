@@ -13,7 +13,7 @@
             return $data;
         }
 
-        $sql = "SELECT * FROM customerdetails, businessdetails WHERE username = '$username'";
+        $sql = "SELECT * FROM customerdetails, businesses WHERE username = '$username'";
 
         $result = mysqli_query($conn, $sql);
 
@@ -36,7 +36,7 @@
                     $sql = "INSERT INTO `customerdetails` (`customerID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
                 }
                 elseif (count($_POST) === 10) {
-                    $sql = "INSERT INTO `businessdetails` (`businessID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
+                    $sql = "INSERT INTO `businesses` (`businessID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
                 }
 
                 $result = mysqli_query($conn, $sql);
