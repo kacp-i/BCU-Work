@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="css/locationscss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <?php session_start() ?>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <a href="index.php">EVENTURA</a> 
+            </div>
+            <div class="pageNav">
+                <a href="services.php">Services</a>
+                <a href="locations.php">Locations</a>
+                <a href="team.php">The Team</a>
+                <a href="support.php">Customer Support</a>
+                <a href="reviews.php">Reviews</a>
+            </div>
+            <div class="profile">
+                <?php if (empty($_SESSION['accType'])): ?>
+                    <a href="login.php">Login</a>
+                <?php else: ?>
+                    <?php if ($_SESSION['accType'] === "customer"): ?>
+                        <a href="customerDash.php">
+                            <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
+                        </a>
+                    <?php elseif ($_SESSION['accType'] === "business"): ?>
+                        <a href="businessDash.php">
+                            <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
+                        </a>
+                    <?php endif ?>
+                <?php endif ?>
+            </div>
+        </nav>
+
+
+        <main class="container">
+            <div class="left-section">
+                <h2>Locations & Hours</h2>
+                <p>
+                    For over 30 years, we’ve been crafting unforgettable wedding experiences for couples across the region.
+                     Whether you're planning an intimate ceremony or a grand celebration, our team of experienced event planners, decorators,
+                      caterers, and coordinators will ensure your big day is seamless and unforgettable. Let us help you create the wedding of
+                       your dreams—beautifully organized and stress-free.
+                </p>
+                <h3>Request a consultation</h3>
+                <p>
+                    Request an appointment to see ourrates at one of our convenient locations.
+                </p>
+                <a href="services.html">
+                    <button class="btn">Request a Consultation</button>
+                </a>
+            </div>
+    
+            <div class="right-section">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609992904!2d72.74109906931187!3d19.082197839789267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b5c0c5f5b251%3A0xa74b62f9e756fd7c!2sBloomington%20Bone%20%26%20Joint%20Clinic!5e0!3m2!1sen!2sus!4v123456789"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </main>
+
+
+        <footer>
+            <div class="footerContent">
+                <div class="split30">
+                    <h1>EVENTURA</h1>
+                    <p>We have planning options that suit your style from the layout to the location to the menu!</p>
+                </div>
+                <div class="split70">
+                    <ul>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="support.html">Customer Support</a></li>
+                        <li><a href="team.html">The Team</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="splitter">
+                <div class="copyright">
+                    <p>Eventura Copyright © All rights reserved</p>
+                </div>
+                <div class="payments">
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com" target="_blank">
+                                <img src="C:/Users/rekay/Pictures/payment-methods.png" alt="Payments">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

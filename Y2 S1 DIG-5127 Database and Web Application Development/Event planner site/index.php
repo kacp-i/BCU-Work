@@ -16,22 +16,22 @@
                 <a href="index.php">Eventura</a>
             </div>
             <div class="pageNav">
-                <a href="services.html">Services</a>
-                <a href="locations.html">Locations</a>
-                <a href="google.com">The Team</a>
-                <a href="google.com">Customer Support</a>
-                <a href="google.com">Reviews</a>
+                <a href="services.php">Services</a>
+                <a href="locations.php">Locations</a>
+                <a href="team.php">The Team</a>
+                <a href="support.php">Customer Support</a>
+                <a href="reviews.php">Reviews</a>
             </div>
             <div class="profile">
                 <?php if (empty($_SESSION['accType'])): ?>
                     <a href="login.php">Login</a>
                 <?php else: ?>
                     <?php if ($_SESSION['accType'] === "customer"): ?>
-                        <a href="login.php">
+                        <a href="customerDash.php">
                             <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
                         </a>
                     <?php elseif ($_SESSION['accType'] === "business"): ?>
-                        <a href="login.php">
+                        <a href="businessDash.php">
                             <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
                         </a>
                     <?php endif ?>
@@ -114,6 +114,10 @@
                 <button>Meet The Team</button>
             </div>
         </div>
+
+        <form action="phpScripts/dbEndSession.php">
+            <input type="submit" value="Logout">
+        </form>
 
         <footer>
             <div class="footerContent">

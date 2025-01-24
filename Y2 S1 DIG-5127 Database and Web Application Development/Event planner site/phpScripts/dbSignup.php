@@ -1,4 +1,5 @@
 <?php
+// Kacper Popis
     // grabs the connection file
     include "dbConnection.php";
 
@@ -13,46 +14,55 @@
             return $data;
         }
 
-        $sql = "SELECT * FROM customerdetails, businesses WHERE username = '$username'";
+        // checking if the username isnt taken
+        $username = validate($_POST['username']);
 
+        // checking the customers table
+        $sql = "SELECT * FROM customerdetails WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
-
-        // checking if the username doesnt exists
         if (mysqli_num_rows($result) === 0) {
-            // grabbing all the values and making them usable
-            $username = validate($_POST['username']);
-            $password = validate($_POST['password']);
-            $passwordCon = validate($_POST['passwordConfirm']);
-            $email = validate($_POST['email']);
-            $tel = validate($_POST['tel']);
-            $fName = validate($_POST['fName']);
-            $lName = validate($_POST['lName']);
-            $addLineOne = validate($_POST['addLineOne']);
-            $postcode = validate($_POST['postcode']);
+            // checking the businesses table
+            $sql = "SELECT * FROM businesses WHERE username = '$username'";
+            $result = mysqli_query($conn, $sql);
+            
+            if (mysqli_num_rows($result) === 0) {
+                // grabbing all the values and making them usable
+                $password = validate($_POST['password']);
+                $passwordCon = validate($_POST['passwordConfirm']);
+                $email = validate($_POST['email']);
+                $tel = validate($_POST['tel']);
+                $fName = validate($_POST['fName']);
+                $lName = validate($_POST['lName']);
+                $addLineOne = validate($_POST['addLineOne']);
+                $postcode = validate($_POST['postcode']);
 
-            if ($password === $passwordCon) {
-                // creating the sql query
-                if (count($_POST) === 9) {
-                    $sql = "INSERT INTO `customerdetails` (`customerID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
+                if ($password === $passwordCon) {
+                    // creating the sql query
+                    if (count($_POST) === 9) {
+                        $sql = "INSERT INTO `customerdetails` (`customerID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
+                    }
+                    elseif (count($_POST) === 10) {
+                        $sql = "INSERT INTO `businesses` (`businessID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
+                    }
+
+                    $result = mysqli_query($conn, $sql);
+
+                    echo "Account created";
+
+                    header("Location: ../login.php");
                 }
-                elseif (count($_POST) === 10) {
-                    $sql = "INSERT INTO `businesses` (`businessID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
+                else {
+                    header("Location: ../signup.php?error=Passwords do not match");
+                    exit();
                 }
-
-                $result = mysqli_query($conn, $sql);
-
-                echo "Account created";
-
-                header("Location: ../login.php");
             }
             else {
-                header("Location: ../signup.php?error=Passwords do not match");
-                exit();
+                header("Location: ../signup.php?error=Username is already taken");
             }
         }
         else {
             header("Location: ../signup.php?error=Username is already taken");
-        }
+        }        
     }
     else {
         header("Location: ../signup.php");

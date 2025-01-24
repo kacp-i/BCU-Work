@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <?php session_start ?>
     </head>
     <body>
         <nav>
@@ -15,16 +16,26 @@
                 <a href="index.php">Eventura</a>
             </div>
             <div class="pageNav">
-                <a href="services.html">Services</a>
-                <a href="locations.html">Locations</a>
-                <a href="google.com">The Team</a>
-                <a href="google.com">Customer Support</a>
-                <a href="google.com">Reviews</a>
+                <a href="services.php">Services</a>
+                <a href="locations.php">Locations</a>
+                <a href="team.php">The Team</a>
+                <a href="support.php">Customer Support</a>
+                <a href="reviews.php">Reviews</a>
             </div>
             <div class="profile">
-                <a href="login.php">
-                    <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
-                </a>
+                <?php if (empty($_SESSION['accType'])): ?>
+                    <a href="login.php">Login</a>
+                <?php else: ?>
+                    <?php if ($_SESSION['accType'] === "customer"): ?>
+                        <a href="customerDash.php">
+                            <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
+                        </a>
+                    <?php elseif ($_SESSION['accType'] === "business"): ?>
+                        <a href="businessDash.php">
+                            <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
+                        </a>
+                    <?php endif ?>
+                <?php endif ?>
             </div>
         </nav>
         
