@@ -51,7 +51,7 @@
 
                     // create a session variable
                     $_SESSION['username'] = $row['username'];
-                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['id'] = $row['customerID'];
                     $_SESSION['accType'] = "customer";
                     
                     // redirect
@@ -67,7 +67,7 @@
             else {
                 // trying the business table
                 // creating the sql query
-                $sql = "SELECT * FROM businesses WHERE username='$username' AND password='$password'";
+                $sql = "SELECT * FROM businessdetails WHERE username='$username' AND password='$password'";
 
                 // performing the query and storing the results as a variable
                 $result = mysqli_query($conn, $sql);
@@ -85,7 +85,7 @@
 
                         // create a session variable
                         $_SESSION['username'] = $row['username'];
-                        $_SESSION['id'] = $row['id'];
+                        $_SESSION['id'] = $row['businessID'];
                         $_SESSION['accType'] = "business";
                         
                         // redirect
@@ -107,6 +107,6 @@
         }
     }
     else {
-        header("Location: ../index.php");
+        header("Location: ../index.php?error=Something wrong");
         exit();
     }
