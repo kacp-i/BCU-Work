@@ -45,7 +45,7 @@
                         $sql = "INSERT INTO `businesses` (`businessID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES (NULL, '$username', '$password', '$email', '$tel', '$addLineOne', '$postcode', '$fName', '$lName', current_timestamp())";
                     }
 
-                    $result = mysqli_query($conn, $sql);
+                    mysqli_query($conn, $sql);
 
                     echo "Account created";
 

@@ -6,6 +6,11 @@
     font-family: "Inter", sans-serif;
 }
 
+.centeredBtn {
+    display: flex;
+    justify-content: center;
+}
+
 /* Ensure the body takes up at least the full height of the viewport */
 body {
     display: flex;
@@ -13,10 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* Wrapper to stretch to full height */
-.wrapper {
-    flex: 1;
-}
+
 
 /* Navigation Styles */
 nav {
@@ -30,7 +32,6 @@ nav {
     display: flex;
     justify-content: space-between; /* Distribute items with space between */
     align-items: center; /* Align items vertically in the center */
-    padding: 0 20px; /* Optional, adds padding to the left and right */
 }
 
 .pageNav {
@@ -251,28 +252,28 @@ marquee a {
     margin-bottom: 4em;
 }
 
-/* White Box (Specific to content3) */
-/* White Box (Specific to content3) */
+/* White Box (Specific to content3) /
+/ White Box (Specific to content3) /
 .whiteBox {
-    background-color: white;  /* Ensure the background is white */
-    width: 70%;  /* Set width */
-    height: 500px;  /* Set a height for visibility */
-    margin: 20px auto;  /* Center it with some margin */
-    margin-left: 10%;  /* Move the box to the left by 10% */
-    margin-bottom: 120px;  /* Increase space below the whiteBox */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
-    border-radius: 10px; /* Optional: adds rounded corners */
+    background-color: white;  /* Ensure the background is white /
+    width: 70%;  /* Set width /
+    height: 500px;  /* Set a height for visibility 
+    margin: 20px auto;  /* Center it with some margin /
+    margin-left: 10%;  /* Move the box to the left by 10% /
+    margin-bottom: 120px;  /* Increase space below the whiteBox /
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility /
+    border-radius: 10px; /* Optional: adds rounded corners /
 }
 
-/* Adjust the image inside the whiteBox */
+/* Adjust the image inside the whiteBox /
 .whiteBox img {
-    margin-left: 0%; /* Move the image inside the white box to the left */
-}
+    margin-left: 0%; /* Move the image inside the white box to the left /
+} */
 
-/* Footer Section */
+/* Footer Section 
 footer {
-    width: 100%;  /* Ensure the footer takes the full width of the page */
-    margin-top: auto;  /* Push footer to the bottom */
+    width: 100%;  / Ensure the footer takes the full width of the page /
+    margin-top: auto;  / Push footer to the bottom /
     background-color: #D9D9D9;
     border-top: 2px solid black;
     padding: 30px;
@@ -280,8 +281,8 @@ footer {
 }
 
 footer * {
-    background-color: #D9D9D9; /* Ensure all elements inside the footer inherit the same background color */
-}
+    background-color: #D9D9D9; / Ensure all elements inside the footer inherit the same background color /
+} 
 
 footer ul {
     align-items: center;
@@ -297,6 +298,7 @@ footer a {
 }
 
 .footerContent {
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -328,30 +330,158 @@ footer a {
 }
 
 .splitter {
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid black;
     padding-top: 10px;
-}
+} */
 
-.payments {
+/* Kacper Popis */
+footer {
+    max-width: 100%;
+    background-color: #D9D9D9;
+    border-top: 2px solid black;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+footer * {
+    background-color: inherit;
+}
+footer ul{
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    overflow: hidden;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+footer .footerContent {
+    max-width: 100%;
     display: flex;
-    justify-content: flex-end;
 }
-
+.footerContent .split30 {
+    width: 25%;
+}
+.split30 h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.split30 p {
+    font-size: 20px;
+}
+.footerContent .split70 {
+    width: 75%;
+}
+.split70 ul {
+    padding-top: 6px;
+}
+.split70 li {
+    float: right;
+    padding-right: 9rem;
+}
+footer .splitter {
+    max-width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+.splitter .copyright {
+    width: 50%;
+}
+.copyright p {
+    font-size: 18px;
+}
+.splitter .payments {
+    width: 50%;
+    float: right;
+}
 .payments li {
+    float: right;
     padding: 10px;
 }
-
-.payments img {
-    max-width: 150px;  /* Adjust the width as needed */
-    height: auto;  /* Automatically adjusts the height based on the aspect ratio */
+.payments li img {
+    max-width: 60px;
+    max-height: 38px;
 }
 
-
-
-
-
-
-
-
+.whiteBox {
+    background-color: white;  /* Ensure the background is white */
+    width: 70%;  /* Set width */
+    height: auto;  /* Set a height for visibility */
+    margin: 20px auto;  /* Center it with some margin */
+    margin-bottom: 80px;  /* Increase space below the whiteBox */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    
+}
+.whiteBox * {
+    background-color: inherit;
+}
+.whiteBox h1 {
+    font-size: 46px;
+    padding-top: 20px;
+}
+.whiteBox .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid .gridChoice {
+    border-radius: 10px;
+    border: 3px solid black;
+    margin: 20px;
+    height: 430px;
+    text-align: center;
+}
+.gridChoice h2 {
+    font-size: 48px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.gridChoice h3 {
+    font-size: 30px;
+    padding-top: 20px;
+}
+.gridChoice h4 {
+    font-size: 24px;
+    padding-top: 10px;
+}
+.gridChoice h5 {
+    border-top: 1px solid black;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.gridChoice p {
+    padding-top: 10px;
+    font-size: 16px;
+}
+.grid .gridChoice:hover {
+    border: 5px solid black;
+}
+.grid .gridChoice:not(:hover) {
+    opacity: 0.85;
+}
+.grid input[type = radio] {
+    height: 40px;
+}
+.grid img {
+    padding-top: 10px;
+    margin-left: -10%;
+    width: 414px;
+    height: 230px;
+    border-radius: 0px;
+}
+.whiteBox input[type = submit] {
+    background-color: #CC7F7F;
+    color: white;
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 24px;
+    margin: 20px;
+}

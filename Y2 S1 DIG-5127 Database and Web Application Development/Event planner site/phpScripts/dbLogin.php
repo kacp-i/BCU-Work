@@ -54,7 +54,7 @@
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['id'] = $row['customerID'];
                     $_SESSION['accType'] = "customer";
-                    
+
                     // redirect
                     header("Location: ../index.php");
                     exit();

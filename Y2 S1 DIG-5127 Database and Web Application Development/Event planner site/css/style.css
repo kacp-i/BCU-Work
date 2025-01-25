@@ -20,6 +20,10 @@ nav {
     border-bottom: 2px solid black;
     z-index: 10;
 }
+nav #curPage {
+    font-weight: bold;
+    border-bottom: 6px solid black;
+}
 nav a {
     float: left;
     text-align: center;
@@ -410,10 +414,6 @@ marquee a {
     width: 95%;
     margin-bottom: 20px;
 }
-#optionOne {
-}
-#optionTwo {
-}
 .accType .switch {
     position: relative;
     width: 580px;
@@ -465,4 +465,83 @@ marquee a {
   
 .accType .slider.round:before {
     border-radius: 50%;
+}
+
+/* SERVICES PAGE STYLE */
+
+.whiteBox {
+    background-color: white;  /* Ensure the background is white */
+    width: 70%;  /* Set width */
+    height: auto;  /* Set a height for visibility */
+    margin: 20px auto;  /* Center it with some margin */
+    margin-bottom: 80px;  /* Increase space below the whiteBox */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    
+}
+.whiteBox * {
+    background-color: inherit;
+}
+.whiteBox h1 {
+    font-size: 46px;
+    padding-top: 20px;
+}
+.whiteBox .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid .gridChoice {
+    border-radius: 10px;
+    border: 3px solid black;
+    margin: 20px;
+    height: 430px;
+    text-align: center;
+}
+.gridChoice h2 {
+    font-size: 48px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.gridChoice h3 {
+    font-size: 30px;
+    padding-top: 20px;
+}
+.gridChoice h4 {
+    font-size: 24px;
+    padding-top: 10px;
+}
+.gridChoice h5 {
+    border-top: 1px solid black;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.gridChoice p {
+    padding-top: 10px;
+    font-size: 16px;
+}
+.grid .gridChoice:hover {
+    border: 5px solid black;
+}
+.grid .gridChoice:not(:hover) {
+    opacity: 0.85;
+}
+.grid input[type = radio] {
+    height: 40px;
+}
+.grid img {
+    padding-top: 10px;
+    margin-left: -10%;
+    width: 414px;
+    height: 230px;
+    border-radius: 0px;
+}
+.whiteBox input[type = submit] {
+    background-color: #CC7F7F;
+    color: white;
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 24px;
+    margin: 20px;
 }

@@ -13,7 +13,7 @@
     <body>
         <nav>
             <div class="logo">
-                <a href="index.php">Eventura</a>
+                <a href="index.php" id="curPage"/>Eventura</a>
             </div>
             <div class="pageNav">
                 <a href="services.php">Services</a>
