@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2025 at 10:08 PM
+-- Generation Time: Jan 27, 2025 at 04:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,9 @@ CREATE TABLE `customerdetails` (
 --
 
 INSERT INTO `customerdetails` (`customerID`, `username`, `password`, `email`, `phoneNum`, `addressLineOne`, `postCode`, `firstName`, `lastName`, `regDate`) VALUES
-(1, 'steve', 'stev1ewonder', 'stevie.wonder@hotmail.com', '+447111111111', '96 wonder street', 'ST34IE', 'wonder', 'stevie', '2025-01-11 00:00:00');
+(1, 'steve', 'stev1ewonder', 'stevie.wonder@hotmail.com', '+447111111111', '96 wonder street', 'ST34IE', 'wonder', 'stevie', '2025-01-11 00:00:00'),
+(2, 'Pdog648', 'bbdpopcorn54', 'pdog648@gmail.com', '07353265678', '566', 'B69 7HU', 'Paul', 'Douglas', '2025-01-26 14:17:40'),
+(3, 'ILoveAVFC12', 'skibiditoilet2', 'ILoveAVFC12@gmail.com', '07353965090', '65 Digne Lane', 'B18 2XU', 'Elliot', 'Haaland', '2025-01-26 14:21:24');
 
 -- --------------------------------------------------------
 
@@ -131,6 +133,17 @@ CREATE TABLE `reviewdetails` (
   `reviewHelpfulCount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `reviewdetails`
+--
+
+INSERT INTO `reviewdetails` (`reviewID`, `customerID`, `service_id`, `reviewScore`, `reviewDescription`, `reviewHelpfulCount`) VALUES
+(1, 1, 6, 5, 'Fantastic service for my event, I am so happy. Would definitely recommend to anyone. Gave the kids a proper scare!', 2),
+(2, 2, 5, 4, 'Could have improved on our waiting times but the service provided was excellent on the day and left all guests happy. Thank you for great service!', 1),
+(3, 3, 4, 5, 'Good stuff init.', 0),
+(4, 2, 5, 5, 'AMAZING FOOD!! BLEW THE JOCKS OFF ME! Definitely using at my next wedding, see you in 2 years time', 3),
+(5, 1, 1, 4, 'Fun for all the family, very catered to requests, my child was so happy!', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -161,15 +174,24 @@ INSERT INTO `services` (`serviceID`, `serviceName`, `serviceType`, `serviceProvi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staffdetails`
+-- Table structure for table `supporttickets`
 --
 
-CREATE TABLE `staffdetails` (
-  `staffID` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `service_id` int(11) NOT NULL,
-  `eventID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `supporttickets` (
+  `ticketID` int(11) NOT NULL,
+  `firstName` char(50) NOT NULL,
+  `lastName` char(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phoneNum` varchar(15) NOT NULL,
+  `reason` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `supporttickets`
+--
+
+INSERT INTO `supporttickets` (`ticketID`, `firstName`, `lastName`, `email`, `phoneNum`, `reason`) VALUES
+(1, 'ben', 'ben', 'ben@benmail.com', '+440111222333', 'i was hoping to change some details on my bookings but. please get back to me ASAP');
 
 --
 -- Indexes for dumped tables
@@ -218,12 +240,10 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`serviceID`);
 
 --
--- Indexes for table `staffdetails`
+-- Indexes for table `supporttickets`
 --
-ALTER TABLE `staffdetails`
-  ADD PRIMARY KEY (`staffID`),
-  ADD UNIQUE KEY `name` (`name`),
-  ADD KEY `eventID` (`eventID`);
+ALTER TABLE `supporttickets`
+  ADD PRIMARY KEY (`ticketID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -239,7 +259,7 @@ ALTER TABLE `businesses`
 -- AUTO_INCREMENT for table `customerdetails`
 --
 ALTER TABLE `customerdetails`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `eventdetails`
@@ -260,6 +280,12 @@ ALTER TABLE `services`
   MODIFY `serviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `supporttickets`
+--
+ALTER TABLE `supporttickets`
+  MODIFY `ticketID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -275,14 +301,8 @@ ALTER TABLE `eventdetails`
 -- Constraints for table `reviewdetails`
 --
 ALTER TABLE `reviewdetails`
-  ADD CONSTRAINT `reviewdetails_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `servicedetails` (`service_id`),
+  ADD CONSTRAINT `reviewdetails_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`serviceID`),
   ADD CONSTRAINT `reviewdetails_ibfk_2` FOREIGN KEY (`customerID`) REFERENCES `customerdetails` (`customerID`);
-
---
--- Constraints for table `staffdetails`
---
-ALTER TABLE `staffdetails`
-  ADD CONSTRAINT `staffdetails_ibfk_1` FOREIGN KEY (`eventID`) REFERENCES `eventdetails` (`eventID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
