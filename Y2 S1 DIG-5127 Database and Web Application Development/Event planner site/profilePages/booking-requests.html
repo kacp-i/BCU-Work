@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Requests</title>
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <h2>Booking Requests</h2>
+    <div class="container">
+        <!-- Pending Requests Section -->
+        <div class="section">
+            <h3>Pending Requests</h3>
+            <div class="booking-request" id="pending-requests">
+                <!-- Request Card for Service 1 -->
+                <div class="request-card pending" id="request1">
+                    <h4>Child Entertainment</h4>
+                    <p><strong>Customer:</strong> Sarah Parker</p>
+                    <p><strong>Date:</strong> May 12, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request1')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request1')">Reject</button>
+                </div>
+                <!-- Request Card for Service 2 -->
+                <div class="request-card pending" id="request2">
+                    <h4>Hamburger Cheeseburger BigMac Whopper</h4>
+                    <p><strong>Customer:</strong> Michael Johnson</p>
+                    <p><strong>Date:</strong> June 3, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request2')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request2')">Reject</button>
+                </div>
+                <!-- Request Card for Service 3 -->
+                <div class="request-card pending" id="request3">
+                    <h4>Photobomb</h4>
+                    <p><strong>Customer:</strong> Emma Williams</p>
+                    <p><strong>Date:</strong> July 20, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request3')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request3')">Reject</button>
+                </div>
+                <!-- Request Card for Service 4 -->
+                <div class="request-card pending" id="request4">
+                    <h4>Feastingables</h4>
+                    <p><strong>Customer:</strong> Mark Spencer</p>
+                    <p><strong>Date:</strong> August 15, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request4')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request4')">Reject</button>
+                </div>
+                <!-- Request Card for Service 5 -->
+                <div class="request-card pending" id="request5">
+                    <h4>Elegant Events Catering</h4>
+                    <p><strong>Customer:</strong> Olivia Brown</p>
+                    <p><strong>Date:</strong> September 2, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request5')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request5')">Reject</button>
+                </div>
+                <!-- Request Card for Service 6 -->
+                <div class="request-card pending" id="request6">
+                    <h4>Freddy Fez</h4>
+                    <p><strong>Customer:</strong> Jack Johnson</p>
+                    <p><strong>Date:</strong> October 25, 2025</p>
+                    <p><strong>Status:</strong> <span class="status">Pending</span></p>
+                    <button class="approve-btn" onclick="approveRequest('request6')">Approve</button>
+                    <button class="reject-btn" onclick="rejectRequest('request6')">Reject</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approved Requests Section -->
+        <div class="section">
+            <h3>Approved Requests</h3>
+            <div class="booking-request" id="approved-requests">
+                <!-- Approved requests will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Rejected Requests Section -->
+        <div class="section">
+            <h3>Rejected Requests</h3>
+            <div class="booking-request" id="rejected-requests">
+                <!-- Rejected requests will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="../customer.html">Go to Customer Page</a>
+    </nav>
+
+    <script>
+        // Function to approve a request
+        function approveRequest(requestId) {
+            var requestCard = document.getElementById(requestId);
+            requestCard.classList.remove('pending');
+            requestCard.classList.add('approved');
+            requestCard.querySelector('.status').innerText = 'Approved';
+            document.getElementById('approved-requests').appendChild(requestCard);
+            requestCard.querySelector('.approve-btn').disabled = true;
+            requestCard.querySelector('.reject-btn').disabled = true;
+        }
+
+        // Function to reject a request
+        function rejectRequest(requestId) {
+            var requestCard = document.getElementById(requestId);
+            requestCard.classList.remove('pending');
+            requestCard.classList.add('rejected');
+            requestCard.querySelector('.status').innerText = 'Rejected';
+            document.getElementById('rejected-requests').appendChild(requestCard);
+            requestCard.querySelector('.approve-btn').disabled = true;
+            requestCard.querySelector('.reject-btn').disabled = true;
+        }
+    </script>
+</body>
+</html>

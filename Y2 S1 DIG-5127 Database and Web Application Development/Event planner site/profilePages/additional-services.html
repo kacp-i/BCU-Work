@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Services</title>
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <header>
+        <h1>Additional Services for Your Event</h1>
+        <p>Customize your event with the following additional services.</p>
+    </header>
+    
+    <div class="container">
+        <!-- Service List -->
+        <div class="service-list">
+            <!-- Service 1: Event Planning -->
+            <div class="service-item">
+                <h2>Event Planning & Coordination</h2>
+                <p>Our event planning service offers you a dedicated team to help you with every detail of your event. From initial consultation to event day coordination, we ensure your event runs smoothly.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 2: Entertainment -->
+            <div class="service-item">
+                <h2>Entertainment</h2>
+                <p>We offer a range of entertainment options including live bands, DJs, performers, and more to keep your guests entertained throughout your event.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 3: Audio/Visual Equipment -->
+            <div class="service-item">
+                <h2>Audio/Visual Equipment</h2>
+                <p>Rent high-quality sound systems, microphones, projectors, and LED screens to make your event memorable. We provide setup and technical support for flawless operation.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 4: Event Photography & Videography -->
+            <div class="service-item">
+                <h2>Event Photography & Videography</h2>
+                <p>Capture every special moment with our professional photography and videography services. We offer customized packages to meet your event's needs.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 5: Catering & Beverages -->
+            <div class="service-item">
+                <h2>Catering & Beverages</h2>
+                <p>Our catering service provides a variety of menu options, from simple appetizers to full-course meals. We also offer beverage services for your event's guests.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 6: Decorations & Setup -->
+            <div class="service-item">
+                <h2>Event Decorations & Setup</h2>
+                <p>We provide a range of decorative services, from floral arrangements to full event setups. Create a memorable ambiance for your event with custom-designed decorations.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 7: Security Services -->
+            <div class="service-item">
+                <h2>Security Services</h2>
+                <p>Ensure the safety and smooth flow of your event with our professional security staff. We offer crowd management, access control, and emergency response teams.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 8: Transportation Services -->
+            <div class="service-item">
+                <h2>Transportation Services</h2>
+                <p>Rent luxury cars, buses, or shuttles to transport your guests from one location to another. We offer reliable transportation solutions for your entire event.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 9: Live Streaming -->
+            <div class="service-item">
+                <h2>Live Streaming</h2>
+                <p>Broadcast your event live for virtual attendees. We offer HD live streaming services with support for virtual guests to participate in real-time.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+
+            <!-- Service 10: VIP Packages -->
+            <div class="service-item">
+                <h2>VIP Packages</h2>
+                <p>Offer an exclusive experience for your VIP guests with our luxury packages, which include personal concierge services, premium seating, and more.</p>
+                <button class="add-service">Add to Event</button>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="service-summary">
+            <h3>Your Selected Services:</h3>
+            <ul id="selected-services">
+                <!-- Selected services will be dynamically listed here -->
+            </ul>
+        </div>
+    </div>
+
+    <nav>
+        <a href="../customer.html">Back to Customer Page</a>
+    </nav>
+
+    <script>
+        // JavaScript to handle adding services to the list
+        document.querySelectorAll('.add-service').forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceName = this.previousElementSibling.previousElementSibling.textContent;
+                const serviceList = document.getElementById('selected-services');
+                const newItem = document.createElement('li');
+                newItem.textContent = serviceName;
+                serviceList.appendChild(newItem);
+            });
+        });
+    </script>
+</body>
+</html>

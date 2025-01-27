@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <h2>Real-Time Chat</h2>
+    <div class="container">
+        <p>Start a real-time chat with our support team.</p>
+
+        <!-- Chatbox -->
+        <div class="chat-box">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message..." />
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="../customer.html">Back to Customer Page</a>
+    </nav>
+    <script>
+        // Select chat elements
+        const sendButton = document.getElementById('send-button');
+        const messageInput = document.getElementById('message-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Function to add a new message to the chat 
+        function addMessage(text, sender) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = text;
+
+            // Add different styles for user and support we are green and fake ai is blue 
+            if (sender === 'user') {
+                messageElement.classList.add('user-msg');
+            } else {
+                messageElement.classList.add('support-msg');
+            }
+
+            chatMessages.appendChild(messageElement);/* tbh the chat wont get this long as it just repeats it self so yh just added incase */
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+        }
+
+        // Event listener for the send button
+        sendButton.addEventListener('click', () => {
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                addMessage(messageText, 'user');  // Display user message
+                messageInput.value = '';  // Clear the input field
+
+                // Simulate a response from the support team ( lowkey jus bot responses )
+                setTimeout(() => {
+                    addMessage('Thank you for reaching out! How can I assist you today?', 'support');
+                }, 1000); /* it will just repeat this so yh not much else  as the code would take much longer for specific responses */
+            }
+        });
+
+        // Optionally, you can allow sending messages by pressing "Enter" key
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+    </script>
+</body>
+</html>

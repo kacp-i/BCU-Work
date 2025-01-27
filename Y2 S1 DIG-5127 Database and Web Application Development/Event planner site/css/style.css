@@ -1,16 +1,22 @@
-/* GENERAL STYLING ACROSS ALL PAGES */
+/* KACPER POPIS */
 
+
+/* GENERAL STYLING ACROSS ALL PAGES */
 :root {
     --backgroundColour: #FAF1F1;
 }
-
 * {
     padding: 0;
     margin: 0;
     background-color: var(--backgroundColour);
     font-family: "Inter", sans-serif;
 }
+.centeredBtn {
+    display: flex;
+    justify-content: center;
+}
 
+/* NAVIGATION STYLING */
 nav {
     height: 4em;
     position: sticky;
@@ -44,6 +50,24 @@ nav .profile {
     background: transparent; 
     float: right;
 }
+nav .logout {
+    position: absolute;
+    right: 80px;
+    top: 7px;
+    text-align: center;
+    height: 10px;
+    background-color: white;
+}
+.logout input {
+    color: white;
+    background-color: black;
+    width: 80px;
+    border-radius: 50px;
+    padding: 15px;
+    margin-bottom: 1.5em;
+    text-decoration: none;
+
+}
 .profile a {
     padding: 0px;
     padding-top: 13px;
@@ -58,11 +82,16 @@ nav .profile {
     object-fit: cover; 
     background: transparent;
 }
+.profile .login {
+    padding-top: 20px;
+    padding-right: 20px;
+}
 
 .sameLine {
     display: inline-flex;
 }
 
+/* FOOTER STYLING */
 footer {
     max-width: 100%;
     background-color: #D9D9D9;
@@ -78,6 +107,9 @@ footer ul{
     padding-left: 1rem;
     list-style-type: none;
     overflow: hidden;
+}
+footer li a{
+    background-color: #D9D9D9;
 }
 footer a {
     text-decoration: none;
@@ -106,7 +138,7 @@ footer .footerContent {
 }
 .split70 li {
     float: right;
-    padding-right: 9rem;
+    padding-right: 8rem;
 }
 footer .splitter {
     max-width: 100%;
@@ -135,7 +167,6 @@ footer .splitter {
 }
 
 /* INDEX PAGE STYLE */
-
 .banner {
     width: 100%;
     display: grid;
@@ -152,15 +183,19 @@ footer .splitter {
     width: 70%;
     font-size: 22px;
 }
-.textColumn button {
-    margin-top: 50px;
+.textColumn .button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
     color: white;
     background-color: black;
-    height: 4em;
+    height: 30px;
     width: 180px;
     border-radius: 50px;
+    padding: 20px;
     margin-bottom: 1.5em;
     font-size: 18px;
+    text-decoration: none;
 }
 .banner img{
     display: block;
@@ -169,18 +204,35 @@ footer .splitter {
     border-radius: 20px;
 }
 
-marquee {
+.sponsors {
+    border-bottom: 1px solid black;
+    margin-bottom: 40px;
+    max-width: 100%;
+}
+.sponsors h3 {
+    text-align: center;
+    width: 100%;
     background-color: black;
-    height: 3em;
-    margin-bottom: 3em;
-}
-marquee a {
+    margin-bottom: 20px;
     color: white;
-    background-color: purple;
-    text-decoration: none;
-    padding: 30px 26px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-
+.sponsors ul{
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.sponsors li {
+    float: right;
+    padding-right: 240px;
+}
+.sponsors img {
+    width: 220px;
+    height: 100px;
+}
 .content1 {
     width: 100%;
     display: grid;
@@ -208,7 +260,6 @@ marquee a {
     border: 20px solid lightgray;
     border-radius: 30px;
 }
-
 .content2 {
     width: 100%;
     margin-bottom: 3em;
@@ -238,15 +289,20 @@ marquee a {
     font-size: 30px;
     padding-bottom: 10px;
 }
-.content2 button {
+.content2 .button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
     color: white;
     background-color: black;
-    height: 4em;
+    height: 30px;
     width: 180px;
     border-radius: 50px;
-    margin-bottom: 3em;
+    padding: 20px;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    text-decoration: none;
 }
-
 .content3 {
     width: 100%;
 }
@@ -273,23 +329,22 @@ marquee a {
     position: relative;
     margin-top: 2em;
 }
-.content3 button {
+.content3 .button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
     color: white;
     background-color: black;
-    height: 4em;
+    height: 30px;
     width: 180px;
     border-radius: 50px;
-    margin-bottom: 4em;
+    padding: 20px;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.centeredBtn {
-    display: flex;
-    justify-content: center;
-}
-
-
-/* LOGIN PAGE STYLE */
-
+/* LOGIN PAGE STYLING */
 .login {
     max-width: 100%;
     
@@ -298,7 +353,6 @@ marquee a {
     width: 100%;
     height: 93.5vh;
 }
-
 .loginFormContainer {
     position: absolute;
     height: 600px;
@@ -351,8 +405,7 @@ marquee a {
     margin-bottom: 40px;
 }
 
-/* SIGNUP PAGE STYLE */
-
+/* SIGNUP PAGE STYLING */
 .signup {
     max-width: 100%;
     
@@ -408,7 +461,6 @@ marquee a {
 .signupFormContainer .sameLine {
     gap: 20px;
 }
-
 .accType {
     display: inline-flex;
     width: 95%;
@@ -467,16 +519,15 @@ marquee a {
     border-radius: 50%;
 }
 
-/* SERVICES PAGE STYLE */
-
+/* SERVICES PAGE STYLING */
 .whiteBox {
-    background-color: white;  /* Ensure the background is white */
-    width: 70%;  /* Set width */
-    height: auto;  /* Set a height for visibility */
-    margin: 20px auto;  /* Center it with some margin */
-    margin-bottom: 80px;  /* Increase space below the whiteBox */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
-    border-radius: 10px; /* Optional: adds rounded corners */
+    background-color: white;  
+    width: 70%;  
+    height: auto;  
+    margin: 20px auto;  
+    margin-bottom: 80px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
     
 }
 .whiteBox * {
@@ -544,4 +595,66 @@ marquee a {
     border-radius: 25px;
     font-size: 24px;
     margin: 20px;
+}
+
+/* CUSTOMER SUPPORT PAGE STYLING */
+.ticketForm {
+    width: 80%;
+    border: 4px solid black;
+    border-top: 0px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+.whiteBox .ticketBand {
+    text-align: center;
+    background-color: var(--backgroundColour);
+    border: 3px solid #dfb1b1;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+.ticketBand p {
+    background-color: inherit;
+    font-size: 26px;
+}
+.ticketForm .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+.ticketForm input[type = text], .ticketForm input[type = tel], .ticketForm input[type = email] {
+    border: 3px solid gray;
+    border-radius: 8px;
+    background-color: #FDFDFD;
+    padding: 20px;
+    font-size: 22px;
+    width: 94.4%;
+    margin: 10px;
+}
+.ticketForm #desc {
+    font-size: 24px;
+    border: 3px solid gray;
+    border-radius: 8px;
+    height: 200px;
+    resize: none;
+}
+
+/* SMALL REDIRECTS PAGES STYLING */
+#ticketConfirmBox {
+    height: 600px;
+    text-align: center;
+}
+#tick {
+    display: inline;
+    margin-left: -100px;
+    width: 200px;
+}
+#tickText {
+    padding-top: 240px;
 }

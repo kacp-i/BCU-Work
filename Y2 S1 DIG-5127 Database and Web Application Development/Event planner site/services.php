@@ -1,50 +1,80 @@
+<!-- KACPER POPIS -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"> <!-- Setting the character encoding -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Services</title>
-        <link rel="stylesheet" href="css/style.css">
+        <title>Services</title> <!-- Setting the title of the page --> 
+        <link rel="stylesheet" href="css/style.css"> <!-- Linking the css file to the page -->
+        <!-- Loading in a google font called "Inter" -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <?php session_start() ?>
+        <?php session_start() ?> <!-- Resumes an existing session (if there is one) if not, generates a new session -->
     </head>
+
     <body>
-        <!-- Navigation -->
+        <!-- Navigation that is on the top of the page -->
         <nav>
+            <!-- div which holds the homepage button -->
             <div class="logo">
-                <a href="index.php">Eventura</a>
+                <a href="index.php"/>Eventura</a>
             </div>
+
+            <!-- div holding the navigation to the remaining pages-->
             <div class="pageNav">
-                <a href="services.php" id="curPage">Services</a>
+                <a href="services.php" id="curPage"">Services</a>
                 <a href="locations.php">Locations</a>
                 <a href="team.php">The Team</a>
                 <a href="support.php">Customer Support</a>
                 <a href="reviews.php">Reviews</a>
             </div>
+
+            <!-- div in charge of showing / hiding the login button when necessary -->
             <div class="profile">
+                <!-- if there is no session, show the login button -->
                 <?php if (empty($_SESSION['accType'])): ?>
-                    <a href="login.php">Login</a>
+                    <a href="login.php" class="login">Login</a>
                 <?php else: ?>
+                    <!-- if the account is of a customer type then the login button changes to a profile icon -->
+                    <!-- the user will be redirected to the customer dashboard once pressing on the profile icon -->
                     <?php if ($_SESSION['accType'] === "customer"): ?>
-                        <a href="customerDash.php">
+                        <!-- creating a logout button -->
+                        <form action="phpScripts/dbEndSession.php" class="logout">
+                            <input type="submit" value="Logout">
+                        </form>
+
+                        <a href="customer.html">
                             <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
                         </a>
+                    <!-- if the account is of a business type then the login button changes to a profile icon -->
+                    <!-- the user will be redirected to the business dashboard once pressing on the profile icon-->
                     <?php elseif ($_SESSION['accType'] === "business"): ?>
-                        <a href="businessDash.php">
+                        <!-- creating a logout button -->
+                        <form action="phpScripts/dbEndSession.php" class="logout">
+                            <input type="submit" value="Logout">
+                        </form>
+
+                        <a href="business.html">
                             <img src="images/profile_image.png" alt="Profile Image" class="profile-img">
                         </a>
                     <?php endif ?>
                 <?php endif ?>
             </div>
         </nav>
-
+        
+        <!-- div to hold the form to create a booking for an event -->
         <div class="content3">
+            <!-- creating a form to allow the user to select a service and a location for the event -->
             <form action="phpScripts/dbServices.php" method="post">
                 <div class="whiteBox">
                     <h1>Select Your Service</h1>
                 
+                    <!-- the user selects 1 service out of the 6 possible ones -->
+                    <!-- 1 out of the 6 must be selected before the user can press the submit button on the form -->
+                    <!-- the choices are put into a 3 column grid, and each choice has a radio button connected to it -->
+                    <!-- this content could potentially be loaded from the database in the future rather than hard code it -->
                     <div class="grid">
                         <label for="ser1">
                             <div class="gridChoice">
@@ -120,7 +150,11 @@
 
                 <div class="whiteBox">
                     <h1>Select Your Location</h1>
-
+                    
+                    <!-- the user selects 1 location out of the 3 possible ones -->
+                    <!-- 1 out of the 3 must be selected before the user can press the submit button on the form -->
+                    <!-- the choices are put into a 3 column grid, and each choice has a radio button connected to it -->
+                    <!-- this content could potentially be loaded from the database in the future rather than hard code it -->
                     <div class="grid">
                         <label for="loc1">
                             <div class="gridChoice">
@@ -153,7 +187,8 @@
                         <br>
                     </div>
                 </div>
-
+                
+                <!-- user presses the submit button to create the event booking -->
                 <div class="whiteBox">
                     <div class="centeredBtn">
                         <input type="submit" value="Confirm">
@@ -162,20 +197,21 @@
             </form>
         </div>
 
-        <!-- Footer -->
+        <!-- creating a footer for the page holding redirects to all main pages on the website and some payment icons and some brief text-->
         <footer>
             <div class="footerContent">
+                <!-- splitting the content into a 30 / 70 split -->
                 <div class="split30">
                     <h1>EVENTURA</h1>
                     <p>We have planning options that suit your style from the layout to the location to the menu!</p>
                 </div>
                 <div class="split70">
                     <ul>
-                        <li><a href="google.com">Reviews</a></li>
-                        <li><a href="google.com">Customer Support</a></li>
-                        <li><a href="google.com">The Team</a></li>
-                        <li><a href="google.com">Locations</a></li>
-                        <li><a href="google.com">Services</a></li>
+                        <li><a href="reviews.php">Reviews</a></li>
+                        <li><a href="support.php">Customer Support</a></li>
+                        <li><a href="team.php">The Team</a></li>
+                        <li><a href="locations.php">Locations</a></li>
+                        <li><a href="services.php">Services</a></li>
                     </ul>
                 </div>
             </div>

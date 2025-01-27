@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locations</title>
-    <link rel="stylesheet" href="css/locationscss.css">
+    <title>Meet The Team</title>
+    <link rel="stylesheet" href="css/team.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -19,8 +19,8 @@
             </div>
             <div class="pageNav">
                 <a href="services.php">Services</a>
-                <a href="locations.php" id="curPage">Locations</a>
-                <a href="team.php">The Team</a>
+                <a href="locations.php">Locations</a>
+                <a href="team.php" id="curPage">The Team</a>
                 <a href="support.php">Customer Support</a>
                 <a href="reviews.php">Reviews</a>
             </div>
@@ -49,36 +49,67 @@
             </div>
         </nav>
 
-        <br>
-
+        <!-- Main Content -->
         <main class="container">
-            <div class="left-section">
-                <h2>Locations & Hours</h2>
-                <p>For over 30 years, we’ve been crafting unforgettable wedding experiences for couples across the region. Our expert team of planners, designers, and coordinators is dedicated to bringing your vision to life, ensuring every detail is perfect. From elegant venues to customized menus, we specialize in creating moments that are as unique as your love story. Whether you're dreaming of an intimate gathering or a grand celebration, our goal is to make your wedding day stress-free and truly unforgettable.</p>
+            <div class="team-section">
+                <h2>MEET THE TEAM</h2>
                 <div class="location-dropdown">
-                    <label for="location-select">Select Location:</label>
-                    <select id="location-select">
+                    <label for="locations">SELECT:</label>
+                    <select id="locations" name="locations">
                         <option value="merrydale">Merrydale Manor</option>
                         <option value="farnham">Farnham Castle</option>
                         <option value="brendebury">Brendebury Court Barns</option>
                     </select>
                 </div>
-            </div>
-    
-            <div class="right-section">
-                <iframe
-                    id="location-map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609992904!2d72.74109906931187!3d19.082197839789267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b5c0c5f5b251%3A0xa74b62f9e756fd7c!2sBloomington%20Bone%20%26%20Joint%20Clinic!5e0!3m2!1sen!2sus!4v123456789"
-                    width="100%"
-                    height="400"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                ></iframe>
+                <div class="team-row">
+                    <!-- Row 1 -->
+                    <div class="team-member">
+                        <img src="images/teamImages/img1.png" alt="Team Member 1" class="team-photo">
+                        <p class="team-role">Event planner</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img2.png" alt="Team Member 2" class="team-photo">
+                        <p class="team-role">Catering Director</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img3.png" alt="Team Member 3" class="team-photo">
+                        <p class="team-role">Venue Coordinator</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img4.png" alt="Team Member 4" class="team-photo">
+                        <p class="team-role">Photographer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img5.png" alt="Team Member 5" class="team-photo">
+                        <p class="team-role">Videographer</p>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="team-member">
+                        <img src="images/teamImages/img7.png" alt="Team Member 6" class="team-photo">
+                        <p class="team-role">Florist</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img6.png" alt="Team Member 7" class="team-photo">
+                        <p class="team-role">Lighting Technician</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img9.png" alt="Team Member 8" class="team-photo">
+                        <p class="team-role">Security Coordinator</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img8.png" alt="Team Member 9" class="team-photo">
+                        <p class="team-role">Sound Technician</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/teamImages/img10.png" alt="Team Member 10" class="team-photo">
+                        <p class="team-role">Transportation Coordinator</p>
+                    </div>
+                </div>
             </div>
         </main>
 
         <section class="spacer"></section>
+        <!-- Footer -->
         <footer>
             <div class="footerContent">
                 <div class="split30">
@@ -113,25 +144,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        const locationMap = document.getElementById("location-map");
-        const locationSelect = document.getElementById("location-select");
-
-        locationSelect.addEventListener("change", (event) => {
-            const location = event.target.value;
-            switch (location) {
-                case "merrydale":
-                    locationMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.266472513102!2d-2.319195423758506!3d53.266844980669724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a516e82b8a347%3A0x7ed8fef75fc32557!2sMerrydale%20Manor%20Wedding%20Venue!5e0!3m2!1sen!2suk!4v1737899932920!5m2!1sen!2suk"; 
-                    break;
-                case "farnham":
-                    locationMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2498.998334929937!2d-0.8047145238908645!3d51.21910633172387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48742c534d503593%3A0x2a30252afeb70fd8!2sFarnham%20Castle!5e0!3m2!1sen!2suk!4v1737900252278!5m2!1sen!2suk";
-                    break;
-                case "brendebury":
-                    locationMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.3518139662847!2d-2.5732785238279443!3d52.20065385982456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48705b2cdfcff135%3A0x60283cd4c0b7af0f!2sBredenbury%20Court%20Barns%20Unique%20Barn%20Wedding%20Venue!5e0!3m2!1sen!2suk!4v1737900340651!5m2!1sen!2suk";
-                    break;
-            }
-        })
-    </script>
 </body>
 </html>

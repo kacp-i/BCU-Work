@@ -1,5 +1,6 @@
 <?php
-// Kacper Popis
+// KACPER POPIS
+
     // setting out variables to connect to database
     $host= "localhost";
     $username= "root";

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Listings</title>
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <h2>Service Listings</h2>
+    <div class="container">
+        <!-- Service Cards -->
+        <div class="service-list">
+            <!-- Service Card 1 -->
+            <div class="service-card" id="service1">
+                <h4 id="service-name-1">Child Entertainment</h4>
+                <p class="category">Category: Entertainment</p>
+                <p class="provider">Provider: Kids R Us</p>
+                <p id="service-description-1" class="description">Kids R Us specializes in providing engaging and interactive experiences for children aged 2 to 12 years. Our mission is to create magical moments that inspire creativity, joy, and learning through various fun-filled activities.</p>
+                <p id="service-price-1" class="price">Price: £299.99</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(1)">Edit Price</button>
+                </div>
+            </div>
+            <!-- Service Card 2 -->
+            <div class="service-card" id="service2">
+                <h4 id="service-name-2">Hamburger Cheeseburger BigMac Whopper</h4>
+                <p class="category">Category: Catering</p>
+                <p class="provider">Provider: McDonalds</p>
+                <p id="service-description-2" class="description">McDonald's is a globally recognized fast-food chain that serves a diverse range of affordable and delicious meals, making it a popular choice for families, individuals, and children.</p>
+                <p id="service-price-2" class="price">Price: £799.99</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(2)">Edit Price</button>
+                </div>
+            </div>
+            <!-- Service Card 3 -->
+            <div class="service-card" id="service3">
+                <h4 id="service-name-3">Photobomb</h4>
+                <p class="category">Category: Photography</p>
+                <p class="provider">Provider: Intel</p>
+                <p id="service-description-3" class="description">Photobomb is a professional photography company dedicated to preserving life’s most cherished memories through stunning imagery.</p>
+                <p id="service-price-3" class="price">Price: £1250.99</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(3)">Edit Price</button>
+                </div>
+            </div>
+            <!-- Service Card 4 -->
+            <div class="service-card" id="service4">
+                <h4 id="service-name-4">Feastingables</h4>
+                <p class="category">Category: Catering</p>
+                <p class="provider">Provider: Mr Burger</p>
+                <p id="service-description-4" class="description">This innovative fast-food concept leverages delivery-only services to reach fans and customers nationwide.</p>
+                <p id="service-price-4" class="price">Price: £19.00</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(4)">Edit Price</button>
+                </div>
+            </div>
+            <!-- Service Card 5 -->
+            <div class="service-card" id="service5">
+                <h4 id="service-name-5">Elegant Events Catering</h4>
+                <p class="category">Category: Catering</p>
+                <p class="provider">Provider: EEC</p>
+                <p id="service-description-5" class="description">Elegant Events Catering is a premier wedding catering company dedicated to creating unforgettable culinary experiences for couples on their special day.</p>
+                <p id="service-price-5" class="price">Price: £2000.00</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(5)">Edit Price</button>
+                </div>
+            </div>
+            <!-- Service Card 6 -->
+            <div class="service-card" id="service6">
+                <h4 id="service-name-6">Freddy Fez</h4>
+                <p class="category">Category: Entertainment</p>
+                <p class="provider">Provider: FF Inc</p>
+                <p id="service-description-6" class="description">Freddy Fez is an enchanting traveling circus that brings joy and wonder to audiences of all ages.</p>
+                <p id="service-price-6" class="price">Price: £840.75</p>
+                <div class="actions">
+                    <button class="edit-btn" onclick="editService(6)">Edit Price</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Service Form -->
+    <div id="edit-form-container" class="edit-form-container" style="display: none;">
+        <h3>Edit Service Price</h3>
+        <form id="edit-service-form">
+            <label for="edit-service-price">Price:</label>
+            <input type="text" id="edit-service-price" />
+            <button type="button" onclick="saveChanges()">Save Changes</button>
+            <button type="button" onclick="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+
+    <nav>
+        <a href="../business.html">Back to Business Page</a>
+    </nav>
+
+    <script>
+        // Function to show the edit form with the current price data
+        function editService(serviceId) {
+            // Show the form
+            document.getElementById('edit-form-container').style.display = 'block';
+
+            // Get the current price of the selected service
+            var servicePrice = document.getElementById('service-price-' + serviceId).innerText.replace('Price: £', '');
+
+            // Populate the form with the current price
+            document.getElementById('edit-service-price').value = '£' + servicePrice;
+
+            // Store the serviceId in a hidden field to use when saving
+            document.getElementById('edit-service-form').dataset.serviceId = serviceId;
+        }
+
+        // Function to save the edited price
+        function saveChanges() {
+            var servicePrice = document.getElementById('edit-service-price').value;
+
+            // Get the serviceId stored in the form
+            var serviceId = document.getElementById('edit-service-form').dataset.serviceId;
+
+            // Update the service card with the new price
+            document.getElementById('service-price-' + serviceId).innerText = 'Price: ' + servicePrice;
+
+            // Hide the form again
+            document.getElementById('edit-form-container').style.display = 'none';
+        }
+
+        // Function to cancel the edit and hide the form
+        function cancelEdit() {
+            document.getElementById('edit-form-container').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
